@@ -5,7 +5,7 @@
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 ## What is it?
-It is It is a platform for you to send your message,thanks, and more.
+It is a platform for you to send your message,thanks, and more.
 It comes up during the AP create task by an AP student whose name is Jiacheng Zhao.
 ## Why did the author commit this project here?
 The author believes that code should be opensource and wants to update the code as soon as other could see directly,
