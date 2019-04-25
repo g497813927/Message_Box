@@ -37,6 +37,7 @@
 		<link rel="stylesheet" href="/css/stylesheet.css" /><!--Import stylesheet for the detailed style describtion which made by my own by using stylesheet and javascript API which shows above-->
 		<link rel="stylesheet" href="/css/footer.css" /><!--Import stylesheet for footer part-->
 		<script src="/js/default.js"></script>
+      	<script src="/js/login.js"></script>
 		<!--Personal Stylesheet and JS Ends Here-->
 	</head>
 	
@@ -56,10 +57,39 @@
 				<div class="row">
 					<a id="islogin" class="col" align="center"></a>
 				</div>
-			</div>
+          </div>
 		</div>
 		<!--Title Bar Ends Here-->
-		
+		<div id="myOverlay" class="overlay">
+			<span class="closebtn" onclick="closelogin();" title="Close Overlay">x</span>
+			<div class="overlay-content">
+              <div class="container">
+                  <form action="">
+                    	<div class="row" style="color:#FFFFFF;">
+                    	Username or Password:
+                    	</div>
+                      	<div class="row">
+      						<input type="text" placeholder="Enter&nbsp;your&nbsp;username&nbsp;or&nbsp;email&nbsp;here" name="username" class="col-sm form-control" required>
+                      	</div>
+                    	<div class="row" style="color:#FFFFFF;">
+                          Password:
+                    	</div>
+                      	<div class="row">
+      						<input type="password" placeholder="Enter&nbsp;your&nbsp;password&nbsp;here" name="pwd" class="col-sm form-control" required>
+                      	</div>
+                      	<div class="row">
+      						<input type="submit" value="Login" class="col-sm btn btn-primary">
+                      	</div>
+                    	<div class="row">
+                          <div class="col-sm" style="color:#FFFFFF;">Does not have an account? <a href="/register.php">Create one!</a></div>
+                          </div>
+                    	<div class="row">
+                          <a href="/resetpwd.php" class="col-sm" style="color:#FFFFFF;">Forget password?</a>
+                    	</div>
+    				</form>
+              </div>
+			</div>
+		</div>
 		<!--Info Starts Here-->
 		<div id="info-what-is-techzjc-message">
 			<div class="container">
@@ -119,7 +149,7 @@
 				<div class="row">
 					<div class="col" align="center">
 						<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-							<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x15.png" />
+							<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
 						</a>
 						<a rel="license" href="https://opensource.org/licenses/mit-license.php">
 							<img alt="MIT License" src="https://badges.frapsoft.com/os/mit/mit.svg?v=103" />
