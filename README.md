@@ -14,4 +14,8 @@ that is the reason why he put this project here.
 Because it is the most Chinese developers' hope. The code should be fun, it should be produced not only fits users' wants but 
 also does not makes developers' life worse. So that is the reason why the author choose this license- the author does not 
 willing to provide code for the companies that push their worker so hard and to make them work as 996. In addition, since 
-the author prefer opensource, he also uses the MIT license
+the author prefer opensource, he also uses the MIT license.
+## Found bugs for the repo?
+It is okay to send your issues and your idea through Github's Issues page. In addition, you can pull your files in Pull requests. The author would check these at least one time per week
+## Something emergent happens related to the site?
+You can always report the situation through e-mail: admin@vip.techzjc.com
