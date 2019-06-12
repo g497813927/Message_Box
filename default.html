@@ -8,36 +8,38 @@
 <!--                                       #         -->
 <!--                                     ""          -->
 <!--This test image is created by Linux toilet shell.-->
-<!--This project is under MIT & Anti-996 license, for more details see the LICENSE file in this repo-->
-
+<!--This project is under MIT & Anti-996 license-->
+<!--You may see there contains lots of other parts, -->
+<!--this is because this project have not finish as whole,-->
+<!--so I would only response the login part of my project-->
 <html>
-	<head>
-		<!--Basic Description Starts Here-->
-		<meta charset="utf-8"><!--Set charset in case occur garble-->
-		<meta http-equiv="x-ua-compatible" content="IE=edge" ><!--Set UA-->
+    <head>
+        <!--Basic Description Starts Here-->
+        <meta charset="utf-8"><!--Set charset in case occur garble-->
+        <meta http-equiv="x-ua-compatible" content="IE=edge" ><!--Set UA-->
 		<meta name="keywords" content="message board,message,techzjc,message techzjc,message board techzjc"/><!--Set keywords-->
-		<meta name="description" content="A platform for you to send your message, thanks. and more. Created by an AP student who is having CSP course with username techzjc"/><!--Set description-->
+		<meta name="description" content="A platform for you to send your message, thanks. and more."/><!--Set description-->
 		<meta name="viewport" content="width=device-width, initial-scale=1"><!--Set the page as mobile first-->
 		<title>Message Board- Techzjc</title><!--Set title-->
 		<!--Basic Description Ends Here-->
 		
 		<!--Stylesheet Reference Starts Here-->
-		<link rel="stylesheet" href="./css/bootstrap.min.css"><!--Import Bootstrap stylesheet, original link:https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css-->
-		<link rel="stylesheet" href="./css/w3.css"><!--Import W3Schools stylesheet, original link:https://www.w3schools.com/w3css/4/w3.css-->
+		<link rel="stylesheet" href="https://api.techzjc.com/css/bootstrap.min.css"><!--Import Bootstrap stylesheet, original link:https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css-->
+		<link rel="stylesheet" href="https://api.techzjc.com/css/w3.css"><!--Import W3Schools stylesheet, original link:https://www.w3schools.com/w3css/4/w3.css-->
 		<link rel="stylesheet" href="https://use.typekit.net/kcm5tio.css"><!--Import Adobe Fonts for website, which means all fonts here are used with approval-->
 		<!--Stylesheet Reference Ends Here-->
 		
 		<!--JS API Reference Starts Here-->
-		<script type="text/javascript" src="./js/jquery.min.js"></script><!--Import jquery library, original link:https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js-->
-		<script type="text/javascript" src="./js/popper.min.js"></script><!--Import Popper JS, original link:https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js-->
-		<script type="text/javascript" src="./js/bootstrap.min.js"></script><!--Import Bootstrap JS, original link:https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js-->
+		<script type="text/javascript" src="https://api.techzjc.com/js/jquery.min.js"></script><!--Import jquery library, original link:https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js-->
+		<script type="text/javascript" src="https://api.techzjc.com/js/popper.min.js"></script><!--Import Popper JS, original link:https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js-->
+		<script type="text/javascript" src="https://api.techzjc.com/js/bootstrap.min.js"></script><!--Import Bootstrap JS, original link:https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js-->
+		<script src="https://api.techzjc.com/js/gt.js"></script><!--Import Geetest Captcha-->
+      	<script src="https://api.techzjc.com/js/encrypt.js"></script><!--Import hmac-sha1 encrypt javascript, link:https://github.com/pH200/hmacsha1-js-->
 		<!--JS API Reference Ends Here-->
 		
 		<!--Personal Stylesheet and JS Starts Here-->
-		<link rel="stylesheet" href="/css/stylesheet.css" /><!--Import stylesheet for the detailed style describtion which made by my own by using stylesheet and javascript API which shows above-->
-		<link rel="stylesheet" href="/css/footer.css" /><!--Import stylesheet for footer part-->
-		<script src="/js/default.js"></script>
-      	<script src="/js/login.js"></script>
+		<link rel="stylesheet" href="https://api.techzjc.com/css/messagebox.css" /><!--Import stylesheet for the detailed style describtion which made by my own by using stylesheet and javascript API which shows above-->
+		<script src="js/default.js"></script><!--Embed javascript-->
 		<!--Personal Stylesheet and JS Ends Here-->
 	</head>
 	
@@ -57,51 +59,64 @@
 				<div class="row">
 					<a id="islogin" class="col" align="center"></a>
 				</div>
-          </div>
+            </div>
 		</div>
-		<!--Title Bar Ends Here-->
-		<div id="myOverlay" class="overlay">
+        <!--Title Bar Ends Here-->
+        
+        <!--The UI part of the response part, the login part, starts here-->
+		<div id="myOverlay" class="overlay" style="display: none;">
 			<span class="closebtn" onclick="closelogin();" title="Close Overlay">x</span>
 			<div class="overlay-content">
-              <div class="container">
-                  <form action="">
-                    	<div class="row" style="color:#FFFFFF;">
-                    	Username or Password:
+                <div class="container">
+                    <form class="popup" method="post" action="/web/VerifyLoginServlet.php">
+                        <div class="row" style="color:#FFFFFF;">
+                            Username or Email:
                     	</div>
                       	<div class="row">
       						<input type="text" placeholder="Enter&nbsp;your&nbsp;username&nbsp;or&nbsp;email&nbsp;here" name="username" class="col-sm form-control" required>
                       	</div>
                     	<div class="row" style="color:#FFFFFF;">
-                          Password:
+                            Password:
                     	</div>
                       	<div class="row">
-      						<input type="password" placeholder="Enter&nbsp;your&nbsp;password&nbsp;here" name="pwd" class="col-sm form-control" required>
+      						<input type="password" placeholder="Enter&nbsp;your&nbsp;password&nbsp;here" name="pwd" id="pwd" class="col-sm form-control" required>
                       	</div>
+                    	<div class="row" style="color:#FFFFFF;">
+                    	    Captcha:
+                    	</div>
+                    	<div class="row">
+                          	<div id="embed-captcha" class="col-sm">
+                                    <p id="wait" class="show">Loading Captcha......</p>
+    								<p id="notice" class="hide">Pls finish captcha first!</p>
+                          	</div>
+                    	</div>
                       	<div class="row">
-      						<input type="submit" value="Login" class="col-sm btn btn-primary">
+      					    <input id="embed-submit" type="submit" value="login" class="col-sm btn btn-primary"> 
                       	</div>
                     	<div class="row">
-                          <div class="col-sm" style="color:#FFFFFF;">Does not have an account? <a href="/register.php">Create one!</a></div>
-                          </div>
+                            <div class="col-sm" style="color:#FFFFFF;">Does not have an account? <a href="/register.php">Create one!</a></div>
+                        </div>
                     	<div class="row">
-                          <a href="/resetpwd.php" class="col-sm" style="color:#FFFFFF;">Forget password?</a>
+                            <a href="/resetpwd.php" class="col-sm" style="color:#FFFFFF;">Forget password?</a>
                     	</div>
     				</form>
-              </div>
+                </div>
 			</div>
-		</div>
+        </div>
+        <!--The UI part of the response part, the login part, Ends here-->
+
 		<!--Info Starts Here-->
 		<div id="info-what-is-techzjc-message">
 			<div class="container">
 				<div class="row">
-					<h1 class="col w3-animate-left">What is Techzjc message box?</h1>
+				    <h1 class="col w3-animate-left">What is Techzjc message box?</h1>
 				</div>
 				<div class="row" align="center">
 					<div class="col-sm-2 border border-left-0 border-top-0 border-bottom-0 w3-animate-left">
 						<img src="/SVG/icon-Intro.svg" /><!--Place svg icon here-->
 					</div>
 					<div class="col-sm-4 border border-right-0 border-top-0 border-bottom-0 w3-animate-right" align="left">
-						<h5>It is a platform for you to send your message,thanks, and more. It comes up during the AP create task by an AP student whose name is Jiacheng Zhao.</h5>
+						<h5>It is a platform for you to send your message,thanks, and more.</h5>
 					</div>
 					<div class="col-sm-6">&nbsp;</div>
 				</div>
@@ -118,24 +133,21 @@
 						<img src="/SVG/Icon-send.svg" /><!--Place svg icon here-->
 					</div>
 					<div class="col-sm-4  border border-right-0 border-top-0 border-bottom-0 w3-animate-right">
-						<h5>You can use your message(Mainland China Only) or your e-mail to login your account and just type your wishes, thanks, or more in the control panel and send directly to his/her phone number(Mainland China Only) or email address</h5>
+						<h5>You can use your e-mail to login your account and just type your wishes, thanks, or more in the control panel and send directly to his/her email address</h5>
 					</div>
 					<div class="col-sm-6">&nbsp;</div>
 				</div>
 			</div>
 		</div>
-		
+		<!--Basic footer part, pls note that the whole code will ONLY be published publicly on the GitHub((https://github.com/g497813927/Techzjc-Message-Box) was set to the private in order to fit the collegeboard's rule) and my own domain after the AP exam-->
 		<div id="footer" class="w3-animate-bottom">
 			<div class="container">
 				<div class="row">
-					<div class="col" align="center">Index</div>
-					<div class="col" align="center">Sitemap</div>
-					<div class="col" align="center">About</div>
-				</div>
-				<div class="row">
 					<div class="col" align="center">
-						<a id="_pinganTrust" target="_blank" href="http://c.trustutn.org/show?type=1&sn=201812251006445835"><img src="http://c.trustutn.org/images/cert/cert_15_2.png" /></a><!--Verification Logo from a Chinese cooperation-->
-					</div>
+						<div id="cc-myssl-id">
+      						<a href="https://myssl.com/international.message.techzjc.com?from=mysslid"><img src="https://static.myssl.com/res/images/myssl-id2.png" alt="" style="max-height:50px;display:block;margin:0 auto"></a>
+						</div><!--SSL Cert verification-->
+                  	</div>
 				</div>
 				<div>
 					<div class="col" align="center">浙ICP备18050147号</div><!--Chinese government's ICP register number placed here to show the permission from government to run a server in China-->
@@ -143,9 +155,9 @@
 				<div class="row">
 					<div class="col" align="center">Techzjc Message Board</div>
 				</div>
-				<div class="row">
-					<div class="col" align="center">Copyright 2019 Jiacheng Zhao</div>
-				</div>
+              	<div>
+                  	<div class="col" align="center">Copyright 2019 Jiacheng Zhao</div>
+              	</div>
 				<div class="row">
 					<div class="col" align="center">
 						<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
