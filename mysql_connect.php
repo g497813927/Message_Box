@@ -9,6 +9,6 @@
 	$sqlpwd = "";		    //Add your SQL password
 	$connect = mysqli_connect($servername, $sqlusername, $sqlpwd);
 	if (!$connect) {
-    	die("Connection failed: " . mysqli_connect_error());
+    		die("Connection failed: " . mysqli_connect_error());
 	}
 ?>
