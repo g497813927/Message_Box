@@ -1,5 +1,5 @@
 # 科技ZJC网 留言板
-[Back to English](https://github.com/g497813927/Techzjc-Message-Box/README.md)
+[Back to English](https://github.com/g497813927/Techzjc-Message-Box/blob/master/README.md)
 ---
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
