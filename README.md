@@ -1,4 +1,5 @@
 # Techzjc Message Box
+[中文版](https://github.com/g497813927/Techzjc-Message-Box/README-zh_CN.md)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
 [![Creative Commons License](https://i.creativecommons.org/l/by/4.0/80x15.png)](http://creativecommons.org/licenses/by/4.0/)
@@ -16,6 +17,7 @@ also does not makes developers' life worse. So that is the reason why the author
 willing to provide code for the companies that push their worker so hard and to make them work as 996. In addition, since 
 the author prefer opensource, he also uses the MIT license.
 ## Found bugs for the repo?
-It is okay to send your PRs directly through Github's Issues page. In addition, you can pull your files in Pull requests. The author would check these at least one time per week
+It is okay to send your issues directly through Github's Issues page. In addition, you directly upload PRs.
+The author would check these at least one time per week
 ## Something emergent happens related to the site?
 You can always report the situation through e-mail: admin@vip.techzjc.com
