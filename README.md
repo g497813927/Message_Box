@@ -1,5 +1,5 @@
 # Techzjc Message Box
-[中文版](https://github.com/g497813927/Techzjc-Message-Box/README-zh_CN.md)
+[中文版](https://github.com/g497813927/Techzjc-Message-Box/blob/master/README-zh_CN.md)
 ---
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
