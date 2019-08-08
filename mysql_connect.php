@@ -1,9 +1,9 @@
-/*
-Techzjc Message Box
-Copyright (c) 2019 Jiacheng Zhao
-This repo uses anti-996 MIT license
-*/
 <?php
+	/*
+		Techzjc Message Box
+		Copyright (c) 2019 Jiacheng Zhao
+		This repo uses anti-996 MIT license
+	*/
 	$servername = "localhost";  //If you are not use sql locally, pls add your sql location
 	$sqlusername = "";          //Add your SQL username here
 	$sqlpwd = "CSP_create_task";//Add your SQL password
