@@ -1,42 +1,29 @@
 <!DOCTYPE html>
-<!--                                                 -->
-<!--   m                  #                "         -->
-<!-- mm#mm   mmm    mmm   # mm   mmmmm   mmm    mmm  -->
-<!--   #    #"  #  #"  "  #"  #     m"     #   #"  " -->
-<!--   #    #""""  #      #   #   m"       #   #     -->
-<!--   "mm  "#mm"  "#mm"  #   #  #mmmm     #   "#mm" -->
-<!--                                       #         -->
-<!--                                     ""          -->
-<!--This test image is created by Linux toilet shell.-->
-<!--This project is under MIT & Anti-996 license-->
 <html>
     <head>
         <!--Basic Description Starts Here-->
         <meta charset="utf-8"><!--Set charset in case occur garble-->
         <meta http-equiv="x-ua-compatible" content="IE=edge" ><!--Set UA-->
-		<meta name="keywords" content="message board,message,techzjc,message techzjc,message board techzjc"/><!--Set keywords-->
-		<meta name="description" content="A platform for you to send your message, thanks. and more."/><!--Set description-->
+		<meta name="keywords" content="Sample Test Site"/><!--Set keywords-->
+		<meta name="description" content="A Sample Test Site for my Research Project, which is also the AP CSP Project I did in 2019"/><!--Set description-->
 		<meta name="viewport" content="width=device-width, initial-scale=1"><!--Set the page as mobile first-->
-		<title>Message Board- Techzjc</title><!--Set title-->
+		<title>Sample Test Site - Techzjc</title><!--Set title-->
 		<!--Basic Description Ends Here-->
 		
 		<!--Stylesheet Reference Starts Here-->
-		<link rel="stylesheet" href="/css/bootstrap.min.css"><!--Import Bootstrap stylesheet, original link:https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css-->
-		<link rel="stylesheet" href="/css/w3.css"><!--Import W3Schools stylesheet, original link:https://www.w3schools.com/w3css/4/w3.css-->
-		<link rel="stylesheet" href="https://use.typekit.net/kcm5tio.css"><!--Import Adobe Fonts for website, which means all fonts here are used with approval-->
+		<link rel="stylesheet" href="./css/bootstrap.min.css"><!--Import Bootstrap stylesheet, original link:https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css-->
+		<link rel="stylesheet" href="./css/w3.css"><!--Import W3Schools stylesheet, original link:https://www.w3schools.com/w3css/4/w3.css-->
 		<!--Stylesheet Reference Ends Here-->
 		
 		<!--JS API Reference Starts Here-->
-		<script type="text/javascript" src="/js/jquery.min.js"></script><!--Import jquery library, original link:https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js-->
-		<script type="text/javascript" src="/js/popper.min.js"></script><!--Import Popper JS, original link:https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js-->
-		<script type="text/javascript" src="/js/bootstrap.min.js"></script><!--Import Bootstrap JS, original link:https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js-->
-		<script src="/js/gt.js"></script><!--Import Geetest Captcha-->
-      	<script src="/js/encrypt.js"></script><!--Import hmac-sha1 encrypt javascript, link:https://github.com/pH200/hmacsha1-js-->
+		<script type="text/javascript" src="./js/jquery.min.js"></script><!--Import jquery library, original link:https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js-->
+		<script type="text/javascript" src="./js/popper.min.js"></script><!--Import Popper JS, original link:https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js-->
+		<script type="text/javascript" src="./js/bootstrap.min.js"></script><!--Import Bootstrap JS, original link:https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js-->
 		<!--JS API Reference Ends Here-->
 		
 		<!--Personal Stylesheet and JS Starts Here-->
-		<link rel="stylesheet" href="/css/messagebox.css" /><!--Import stylesheet for the detailed style describtion which made by my own by using stylesheet and javascript API which shows above-->
-		<script src="js/default.js"></script><!--Embed javascript-->
+		<link rel="stylesheet" href="./css/messagebox.css" /><!--Import stylesheet for the detailed style description which made by my own by using stylesheet and javascript API which shows above-->
+		<script src="./js/default.js"></script><!--Embed javascript-->
 		<!--Personal Stylesheet and JS Ends Here-->
 	</head>
 	
@@ -45,7 +32,7 @@
 		<div id="title-bar" align="center">
 			<div class="container">
 				<div class="row">
-					<span id="webtitle" class="col w3-animate-top" align="center">Techzjc Message Box</span>
+					<span id="webtitle" class="col w3-animate-top" align="center">Sample Test Site</span>
 				</div>
 				<div class="row">
 					<h5 id="welcomemsg" class="col w3-animate-top" align="center"></h5>
@@ -62,10 +49,10 @@
         
         <!--The UI part of the response part, the login part, starts here-->
 		<div id="myOverlay" class="overlay" style="display: none;">
-			<span class="closebtn" onclick="closelogin();" title="Close Overlay">x</span>
+			<span class="closebtn" onclick="closelogin();" title="Close Overlay" style="color:#FFFFFF;">x</span>
 			<div class="overlay-content">
                 <div class="container">
-                    <form class="popup" method="post" action="/web/VerifyLoginServlet.php">
+                    <form class="popup" method="post" action="verify.php">
                         <div class="row" style="color:#FFFFFF;">
                             Username or Email:
                     	</div>
@@ -78,24 +65,9 @@
                       	<div class="row">
       						<input type="password" placeholder="Enter&nbsp;your&nbsp;password&nbsp;here" name="pwd" id="pwd" class="col-sm form-control" required>
                       	</div>
-                    	<div class="row" style="color:#FFFFFF;">
-                    	    Captcha:
-                    	</div>
-                    	<div class="row">
-                          	<div id="embed-captcha" class="col-sm">
-                                    <p id="wait" class="show">Loading Captcha......</p>
-    								<p id="notice" class="hide">Pls finish captcha first!</p>
-                          	</div>
-                    	</div>
                       	<div class="row">
       					    <input id="embed-submit" type="submit" value="login" class="col-sm btn btn-primary"> 
                       	</div>
-                    	<div class="row">
-                            <div class="col-sm" style="color:#FFFFFF;">Does not have an account? <a href="/register.php">Create one!</a></div>
-                        </div>
-                    	<div class="row">
-                            <a href="/resetpwd.php" class="col-sm" style="color:#FFFFFF;">Forget password?</a>
-                    	</div>
     				</form>
                 </div>
 			</div>
@@ -103,81 +75,43 @@
         <!--The UI part of the response part, the login part, Ends here-->
 
 		<!--Info Starts Here-->
-		<div id="info-what-is-techzjc-message">
+		<div id="info-what-is-the-purpose-of-this-site">
 			<div class="container">
 				<div class="row">
-				    <h1 class="col w3-animate-left">What is Techzjc message box?</h1>
+				    <h1 class="col w3-animate-left">What is the Purpose of This Site?</h1>
 				</div>
 				<div class="row" align="center">
 					<div class="col-sm-2 border border-left-0 border-top-0 border-bottom-0 w3-animate-left">
-						<img src="/SVG/icon-Intro.svg" /><!--Place svg icon here-->
+						&nbsp;
 					</div>
 					<div class="col-sm-4 border border-right-0 border-top-0 border-bottom-0 w3-animate-right" align="left">
-						<h5>It is a platform for you to send your message,thanks, and more.</h5>
+						<h5>You could use this source code to deploy in your own server, using JMeter to Test your Server's Performance</h5>
 					</div>
 					<div class="col-sm-6">&nbsp;</div>
 				</div>
 			</div>
 		</div>
 		
-		<div id="info-how-will-my-message-transmit">
+		<div id="info-what-are-included-in-this-site">
 			<div class="container">
 				<div class="row">
-					<h1 class="col w3-animate-left">How will my message transmit?</h1>
+					<h1 class="col w3-animate-left">What Are Included in This Site?</h1>
 				</div>
 				<div class="row">
 					<div class="col-sm-2 border border-left-0 border-top-0 border-bottom-0 w3-animate-left">
-						<img src="/SVG/Icon-send.svg" /><!--Place svg icon here-->
+						&nbsp;
 					</div>
 					<div class="col-sm-4  border border-right-0 border-top-0 border-bottom-0 w3-animate-right">
-						<h5>You can use your e-mail to login your account and just type your wishes, thanks, or more in the control panel and send directly to his/her email address</h5>
+						<h5>This site includes two parts, one is this page's load, another is the login part(might need MySQL support). You can use JMeter to test the performance of loading the site if you want to test its static page performance, at the same time, test whether or not the site is correctly response the login requests. For detailed database deployment, see the source code's verify.php code.</h5>
 					</div>
 					<div class="col-sm-6">&nbsp;</div>
 				</div>
 			</div>
 		</div>
-		<!--Basic footer part, pls note that the whole code will ONLY be published publicly on the GitHub((https://github.com/g497813927/Techzjc-Message-Box) was set to the private in order to fit the collegeboard's rule) and my own domain after the AP exam-->
 		<div id="footer" class="w3-animate-bottom">
 			<div class="container">
 				<div class="row">
-					<div class="col" align="center">
-						<div id="cc-myssl-id">
-      						<a href="https://myssl.com/international.message.techzjc.com?from=mysslid"><img src="https://static.myssl.com/res/images/myssl-id2.png" alt="" style="max-height:50px;display:block;margin:0 auto"></a>
-						</div><!--SSL Cert verification-->
-                  	</div>
-				</div>
-				<div>
-					<div class="col" align="center">浙ICP备18050147号</div><!--Chinese government's ICP register number placed here to show the permission from government to run a server in China-->
-				</div>
-				<div class="row">
-					<div class="col" align="center">Techzjc Message Board</div>
-				</div>
-              	<div>
-                  	<div class="col" align="center">Copyright 2019 Jiacheng Zhao</div>
-              	</div>
-				<div class="row">
-					<div class="col" align="center">
-						<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-							<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
-						</a>
-						<a rel="license" href="https://opensource.org/licenses/mit-license.php">
-							<img alt="MIT License" src="https://badges.frapsoft.com/os/mit/mit.svg?v=103" />
-						</a>
-						<a rel="link" href="https://996.icu">
-							<img alt="996.icu" src="https://img.shields.io/badge/link-996.icu-red.svg" />
-						</a>
-						<a rel="license" href="https://github.com/996icu/996.ICU/blob/master/LICENSE">
-							<img alt="Anti 996 License" src="https://img.shields.io/badge/license-Anti%20996-blue.svg" />
-						</a>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col" align="center">
-						This work is licensed under 
-						<a rel="license" href="https://opensource.org/licenses/mit-license.php">MIT</a>, 
-						<a rel="license" href="https://github.com/996icu/996.ICU/blob/master/LICENSE">Anti-996</a>, and
-						<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-					</div>
+					<div class="col" align="center">Sample Test Site</div>
 				</div>
 			</div>
 		</div>
